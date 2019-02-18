@@ -1,6 +1,6 @@
 #include "autoconf.h"
 
-#include <kernel/arch/socs/stm32f407/soc-layout.h>
+#include <kernel/src/arch/socs/stm32f407/soc-layout.h>
 
 
 
