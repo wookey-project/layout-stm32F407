@@ -1,8 +1,12 @@
 #include "autoconf.h"
 
-#include <kernel/arch/socs/stm32f429/soc-layout.h>
+#include <kernel/arch/socs/stm32f407/soc-layout.h>
 
-#define APP_SIZE 0x10000
+
+
+#define APP_SIZE_DFU 0x8000
+
+#define APP_SIZE_FW 0x10000
 
 /* Generate a link error if heap and stack don't fit into RAM */
 _Min_Heap_Size = 0;      /* required amount of heap  */
@@ -21,7 +25,7 @@ _kern_init_msp_stack = RAM2_BASE + RAM2_SIZE - 0x4000;
 MEMORY
 {
   LDR (rx)       : ORIGIN = LDR_BASE, LENGTH = LDR_SIZE
-  SHR (rw)       : ORIGIN = SHR_BASE, LENGTH = SHR_SIZE
+  SHR_FLIP (rw)  : ORIGIN = SHR_FLIP_BASE, LENGTH = SHR_SIZE
   FW1_KERN (rx)  : ORIGIN = FW1_KERN_BASE, LENGTH = FW1_KERN_SIZE
 /* for each user app */
   FW1_USER (rx)  : ORIGIN = FW1_USER_BASE, LENGTH = FW1_USER_SIZE
