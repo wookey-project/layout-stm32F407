@@ -245,11 +245,6 @@
       "enable_register":"r_CORTEX_M_RCC_AHB1ENR",
       "enable_register_bits": ["RCC_AHB1ENR_DMA2EN"]
   },
-      "read_only": "false",
-      "permission": "PERM_RES_DEV_CRYPTO_USR",
-      "enable_register":"r_CORTEX_M_RCC_AHB2ENR",
-      "enable_register_bits":["RCC_AHB2ENR_CRYPEN"]
-  },
   {
       "name":"usb-otg-fs",
       "type":"block",
