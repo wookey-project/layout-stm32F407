@@ -808,10 +808,21 @@
       "enable_register_bits": ["0"]
   },
   {
-      "name":"flash-memory",
+      "name":"flash-flip",
       "type":"block",
       "address":"0x08000000",
-      "size":"0x10000",
+      "size":"0x100000",
+      "memory_subregion_mask":"0",
+      "read_only": "false",
+      "permission": "PERM_RES_TSK_UPGRADE",
+      "enable_register":"0",
+      "enable_register_bits": ["0"]
+  },
+  {
+      "name":"flash-flip-shr",
+      "type":"block",
+      "address":"0x08008000",
+      "size":"0x8000",
       "memory_subregion_mask":"0",
       "read_only": "false",
       "permission": "PERM_RES_TSK_UPGRADE",
