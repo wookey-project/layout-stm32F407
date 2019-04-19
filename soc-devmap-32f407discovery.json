@@ -835,7 +835,7 @@
       "address":"0",
       "size":"0",
       "gpios": [
-        { "name":"LED0", "port":"GPIO_PD", "pin":"12" }
+        { "name":"LED_GREEN", "port":"GPIO_PD", "pin":"12" }
       ]
   },
   {
@@ -844,7 +844,7 @@
       "address":"0",
       "size":"0",
       "gpios": [
-        { "name":"LED1", "port":"GPIO_PD", "pin":"13" }
+        { "name":"LED_ORANGE", "port":"GPIO_PD", "pin":"13" }
       ]
   },
   {
@@ -853,7 +853,7 @@
       "address":"0",
       "size":"0",
       "gpios": [
-        { "name":"LED0", "port":"GPIO_PD", "pin":"14" }
+        { "name":"LED_RED", "port":"GPIO_PD", "pin":"14" }
       ]
   },
   {
@@ -862,7 +862,7 @@
       "address":"0",
       "size":"0",
       "gpios": [
-        { "name":"LED1", "port":"GPIO_PD", "pin":"15" }
+        { "name":"LED_BLUE", "port":"GPIO_PD", "pin":"15" }
       ]
   },
 
@@ -872,7 +872,7 @@
       "address":"0",
       "size":"0",
       "gpios": [
-        { "name":"DFU_BTN", "port":"GPIO_PA", "pin":"0" }
+        { "name":"BUTTON", "port":"GPIO_PA", "pin":"0" }
       ]
   }
 ]
