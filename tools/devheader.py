@@ -114,9 +114,13 @@ c_footer= """
 if not os.path.exists(outdir):
     os.makedirs(outdir);
 
+if not os.path.isfile(filename):
+    print(u'unable to open {}'.filename);
+    exit(0);
 
 with open(filename, "r") as jsonfile:
     data = json.load(jsonfile, object_pairs_hook=collections.OrderedDict);
+
 
 
 def generate_c():
