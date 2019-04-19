@@ -1,0 +1,82 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description":"Wookey and EwoK device listing JSON schema",
+    "type":"array",
+    "items": {
+        "type":"object",
+
+        "properties": {
+            "name": { "type": "string" },
+            "type": { "type": "string", "enum": ["block","peripheral"] },
+            "subtype": { "type": "string", "enum": ["controler", "memory", "dma"},
+            "address": { "type":"string" },
+            "size": { "type":"string" },
+            "irqs": { "type":"array",
+                "maxItems":4,
+                "items": {
+                    "types":"object",
+                    "properties": {
+                        "name": { "type":"string" },
+                        "value":  { "type":"string" }
+                    }
+                }
+            },
+            "gpios": { "type":"array",
+                "maxItems":14,
+                "items": {
+                    "types":"object",
+                    "properties": {
+                        "name": { "type":"string" },
+                        "port": { "type":"string" },
+                        "pin" : { "type":"string" }
+                    }
+                }
+            },
+            "dmas": {
+                "type":"object",
+
+                "properties": {
+                    "controler_name":"string",
+                    "controler_id":"string",
+                    "dma": {
+                        "type":"array",
+                        "maxItems":8,
+                        "items": {
+                            "types":"object",
+                            "properties": {
+                                "name":  { "type":"string" },
+                                "value": { "type":"string" }
+                            }
+                        }
+                    }
+                }
+            },
+            "sections": {
+                "type":"array",
+                "items": {
+                    "type":"object",
+                    "properties": {
+                        "name":    { "type":"string" },
+                        "address": { "type":"string" },
+                        "size":    { "type":"string" }
+                    }
+                }
+            },
+            "read_only": { "type":"string", "enum": ["true","false"] },
+            "permission": { "type":"string" },
+            "enable_register": { "type":"string" },
+            "enable_register_bits": {
+                "type":"array",
+                "maxItems":2,
+                "items": { "types": "string" }
+            },
+            "memory_subregion_mask": {"type":"string" }
+        },
+
+        "required": ["name","type","address","size"],
+
+        "dependencies": {
+            "enable_register_bits": ["enable_register"]
+        }
+    }
+}
