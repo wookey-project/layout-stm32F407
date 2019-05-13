@@ -511,8 +511,8 @@
         { "name":"UART4_IRQ", "value":"68" }
       ],
       "gpios": [
-        { "name":"UART4_TX", "port":"GPIO_PA", "pin":"0" },
-        { "name":"UART4_RX", "port":"GPIO_PA", "pin":"1" }
+        { "name":"UART4_TX", "port":"GPIO_PC", "pin":"10" },
+        { "name":"UART4_RX", "port":"GPIO_PC", "pin":"11" }
       ],
       "dmas": {
           "controler_name":"UART4_DMA_CTRL",
