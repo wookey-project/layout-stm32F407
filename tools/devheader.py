@@ -152,6 +152,8 @@ def generate_c():
             devfile.write("# define %s\n" % devheadername);
             devfile.write("\n#include \"generated/devinfo.h\"\n\n");
 
+            devfile.write("# define %s_BASE %s\n" % (device_c_name.upper(), device["address"]));
+
             if device["type"] == "block":
                 # generating defines for IRQ values
                 if 'irqs' in device:
