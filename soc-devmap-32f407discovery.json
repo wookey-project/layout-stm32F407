@@ -245,6 +245,17 @@
       "enable_register":"r_CORTEX_M_RCC_AHB1ENR",
       "enable_register_bits": ["RCC_AHB1ENR_DMA2EN"]
   },
+  {   "name":"rng",
+      "type":"block",
+      "address":"0x50060800",
+      "size":"0x400",
+      "memory_subregion_mask":"0",
+      "irqs": [
+          { "name":"HASH_RNG_IRQ", "value":"96" }
+      ],
+      "read_only": "false",
+      "permission": "PERM_RES_TSK_RNG"
+  },
   {
       "name":"usb-otg-fs",
       "type":"block",
