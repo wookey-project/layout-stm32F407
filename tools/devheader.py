@@ -99,7 +99,7 @@ struct user_driver_device_infos {
     physaddr_t address;    /**< Device MMIO base address */
     uint32_t   size;       /**< Device MMIO mapping size */
     /** GPIO informations of the device (pin, port) */
-    struct user_driver_device_gpio_infos gpios[14];
+    struct user_driver_device_gpio_infos gpios[18];
 };
 
 
@@ -125,7 +125,7 @@ with open(filename, "r") as jsonfile:
 
 def generate_c():
     # max number of GPIOs per dictionary entry
-    max_gpio_num = 14; # 13 is requested by USB_OTG_HS, 14 to align on wordsize
+    max_gpio_num = 18; # 18 is requested by ETH_MAC
 
     # structure definition
     with open(os.path.join(outdir, 'devinfo.h'), "w") as devinfofile:
@@ -188,7 +188,7 @@ def generate_c():
             if 'gpios' in device:
                 gpios = device["gpios"];
                 for gpio in gpios[0:]:
-                    devfile.write("      { %s, %s },\n" % (gpio["port"], gpio["pin"]));
+                    devfile.write("      { %s, %s }, /* %s */\n" % (gpio["port"], gpio["pin"], gpio["name"]));
                 if len(gpios) < max_gpio_num:
                     for i in range(len(gpios), max_gpio_num):
                         devfile.write("      { 0, 0 },\n");
