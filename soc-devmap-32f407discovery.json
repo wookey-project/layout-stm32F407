@@ -427,8 +427,8 @@
         { "name":"CAN1_SCE_IRQ", "value":"38" }
       ],
       "gpios": [
-        { "name":"CAN1_TX", "port":"GPIO_PA", "pin":"12" },
-        { "name":"CAN1_RX", "port":"GPIO_PA", "pin":"11" }
+        { "name":"CAN1_TX", "port":"GPIO_PD", "pin":"1" },
+        { "name":"CAN1_RX", "port":"GPIO_PD", "pin":"0" }
       ],
       "read_only": "false",
       "permission": "PERM_RES_DEV_BUSES",
@@ -446,6 +446,10 @@
         { "name":"CAN2_RX0_IRQ", "value":"80" },
         { "name":"CAN2_RX1_IRQ", "value":"81" },
         { "name":"CAN2_SCE_IRQ", "value":"82" }
+      ],
+      "gpios": [
+        { "name":"CAN1_TX", "port":"GPIO_PB", "pin":"13" },
+        { "name":"CAN1_RX", "port":"GPIO_PB", "pin":"12" }
       ],
       "read_only": "false",
       "permission": "PERM_RES_DEV_BUSES",
