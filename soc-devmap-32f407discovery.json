@@ -287,6 +287,26 @@
           { "name":"ETH_IRQ", "value":"77" },
           { "name":"ETH_WKUP_IRQ", "value":"78" }
       ],
+      "gpios": [
+          { "name":"ETH_MDIO", "port":"GPIO_PA", "pin":"2" },
+          { "name":"ETH_MDC", "port":"GPIO_PC", "pin":"1" },
+          { "name":"ETH_PPS_OUT", "port":"GPIO_PB", "pin":"5" },
+          { "name":"ETH_MII_CRS", "port":"GPIO_PH", "pin":"2" },
+          { "name":"ETH_MII_COL", "port":"GPIO_PH", "pin":"3" },
+          { "name":"ETH_MII_RX_ER", "port":"GPIO_PI", "pin":"10" },
+          { "name":"ETH_MII_RXD2", "port":"GPIO_PH", "pin":"6" },
+          { "name":"ETH_MII_RXD3", "port":"GPIO_PH", "pin":"7" },
+          { "name":"ETH_MII_TX_CLK", "port":"GPIO_PC", "pin":"3" },
+          { "name":"ETH_MII_TXD2", "port":"GPIO_PC", "pin":"2" },
+          { "name":"ETH_MII_TXD3", "port":"GPIO_PB", "pin":"8" },
+          { "name":"ETH_MII_RX_CLK", "port":"GPIO_PA", "pin":"1" },
+          { "name":"ETH_MII_RX_DV", "port":"GPIO_PA", "pin":"7" },
+          { "name":"ETH_MII_RXD0", "port":"GPIO_PC", "pin":"4" },
+          { "name":"ETH_MII_RXD1", "port":"GPIO_PC", "pin":"5" },
+          { "name":"ETH_MII_TX_EN", "port":"GPIO_PG", "pin":"11" },
+          { "name":"ETH_MII_TXD0", "port":"GPIO_PG", "pin":"13" },
+          { "name":"ETH_MII_TXD1", "port":"GPIO_PG", "pin":"4" }
+      ],
       "read_only": "false",
       "permission": "PERM_RES_DEV_BUSES",
       "enable_register":"r_CORTEX_M_RCC_AHB1ENR",
@@ -393,6 +413,44 @@
       "permission": "PERM_RES_DEV_BUSES",
       "enable_register":"r_CORTEX_M_RCC_APB1ENR",
       "enable_register_bits": ["RCC_APB1ENR_SPI3EN"]
+  },
+  {
+      "name":"can1",
+      "type":"block",
+      "address":"0x40006400",
+      "size":"0x400",
+      "memory_subregion_mask":"0",
+      "irqs": [
+        { "name":"CAN1_TX_IRQ", "value":"35" },
+        { "name":"CAN1_RX0_IRQ", "value":"36" },
+        { "name":"CAN1_RX1_IRQ", "value":"37" },
+        { "name":"CAN1_SCE_IRQ", "value":"38" }
+      ],
+      "gpios": [
+        { "name":"CAN1_TX", "port":"GPIO_PA", "pin":"12" },
+        { "name":"CAN1_RX", "port":"GPIO_PA", "pin":"11" }
+      ],
+      "read_only": "false",
+      "permission": "PERM_RES_DEV_BUSES",
+      "enable_register":"r_CORTEX_M_RCC_APB1ENR",
+      "enable_register_bits": ["RCC_APB1ENR_CAN1EN"]
+  },
+  {
+      "name":"can2",
+      "type":"block",
+      "address":"0x40006800",
+      "size":"0x400",
+      "memory_subregion_mask":"0",
+      "irqs": [
+        { "name":"CAN2_TX_IRQ", "value":"79" },
+        { "name":"CAN2_RX0_IRQ", "value":"80" },
+        { "name":"CAN2_RX1_IRQ", "value":"81" },
+        { "name":"CAN2_SCE_IRQ", "value":"82" }
+      ],
+      "read_only": "false",
+      "permission": "PERM_RES_DEV_BUSES",
+      "enable_register":"r_CORTEX_M_RCC_APB1ENR",
+      "enable_register_bits": ["RCC_APB1ENR_CAN2EN"]
   },
   {
       "name":"usart1",
